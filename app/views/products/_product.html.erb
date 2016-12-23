@@ -1,0 +1,16 @@
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <td>
+    <%= image_tag(product.image_url, class: 'list_image') %>
+  </td>
+  <td class="list_description">
+    <dl>
+      <dt><%= product.title %></dt>
+      <dd><%= truncate(strip_tags(product.description), length: 80) %></dd>
+    </dl>
+  </td>
+  <td class="list_actions">
+    <%= link_to 'Show', product %>
+    <%= link_to 'Edit', "http://localhost:3000/products?id=#{product.id}", class: "edit_ajax", id: "show_form", remote: true  %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "destroy-product" %>
+  </td>
+</tr>

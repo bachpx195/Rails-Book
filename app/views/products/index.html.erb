@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+<table>
+  <tbody id="products">
+      <%= render @products %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New', new_product_path , id: "show_form", remote: true %>
+<%= link_to 'Back', products_path %>
+<div id="form" style="display: none">
+  <%= render 'form', product: @product %>
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    $("body").on('click',"#show_form",function(event){
+      event.preventDefault();
+      $("#form").slideToggle();
+    });
+  });
+</script>
