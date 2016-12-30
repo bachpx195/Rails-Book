@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <button class="col-md-3 btn btn-default" type="submit" id="quotes">quotes</button>
+    <button class="col-md-3 btn btn-default" type="submit">Button</button>
+    <button class="col-md-3 btn btn-default" type="submit">Button</button>
+    <button class="col-md-3 btn btn-default" type="submit">Button</button>
+    <div class="quote-form">
+      <div class="quote-box">
+        <div class="quote-text">
+          <i class="fa fa-quote-left"> </i><span id="text"></span>
+        </div>
+        <div class="quote-author">
+          - <span id="author"></span>
+        </div>
+        <div class="buttons">
+          <a class="button" id="tweet-quote" title="Tweet this quote!" target="_blank">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <button class="button" id="new-quote">New quote</button>
+        </div>
+      </div>
+      <div class="footer"> by <a href="https://codepen.io/hezag/">hezag</a></div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $("#quotes").on('click', function () {
+      $('.quote-form').slideToggle();
+    });
+  });
+</script>
+
